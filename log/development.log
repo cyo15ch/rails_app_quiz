@@ -1,0 +1,62 @@
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJobs (20230318040411)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "employer_name" varchar, "employer_description" varchar, "job_title" varchar, "job_description" varchar, "year_of_experience" integer, "education_requirement" varchar, "industry" varchar, "base_salary" integer, "employment_type_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230318040411"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-18 04:12:15.653883"], ["updated_at", "2023-03-18 04:12:15.653883"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-03-18 12:50:55 +0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/christinechan/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-6.1.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/christinechan/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-6.1.7.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.5ms | Allocations: 580)
+Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4189)
+
+
+Started GET "/" for ::1 at 2023-03-18 12:53:05 +0800
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/christinechan/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-6.1.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/christinechan/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-6.1.7.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.5ms | Allocations: 474)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3030)
+
+
+Started GET "/" for ::1 at 2023-03-18 12:58:30 +0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/christinechan/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-6.1.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/christinechan/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-6.1.7.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.5ms | Allocations: 474)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3029)
+
+
+Started GET "/jobs" for ::1 at 2023-03-18 12:58:35 +0800
+  
+SyntaxError (/Users/christinechan/rails_app_quiz/app/controllers/jobs_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/jobs_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/jobs_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/jobs_controller.rb:25: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/jobs" for ::1 at 2023-03-18 12:59:31 +0800
+Processing by JobsController#index as HTML
+  Rendering jobs/index.jbuilder
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/jobs/index.jbuilder:2
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.jbuilder:2
+  Rendered jobs/index.jbuilder (Duration: 3.0ms | Allocations: 2057)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 4363)
+
+
